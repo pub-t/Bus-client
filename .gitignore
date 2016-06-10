@@ -1,6 +1,5 @@
 node_modules
-
-typings.json
+typings
 
 .idea
 
@@ -8,3 +7,4 @@ typings.json
 
 app/**/*.js
 app/**/*.map
+typings.json
