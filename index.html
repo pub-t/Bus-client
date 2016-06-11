@@ -1,11 +1,11 @@
 <html>
 <head>
-    <title>Angular 2 QuickStart</title>
+    <title>Bus client</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.css" />
+    <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css"/>
     <link rel="stylesheet" href="style.css">
 
     <!-- JS -->
@@ -14,13 +14,15 @@
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-        System.import('app').catch(function(err){ console.error(err); });
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
     </script>
 </head>
+<base href="/">
 <body>
 <my-app>Loading...</my-app>
 </body>

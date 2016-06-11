@@ -12,7 +12,8 @@
         '@angular':                   'node_modules/@angular',
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
         'rxjs':                       'node_modules/rxjs',
-        'leaflet':                    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js'
+        'leaflet':                    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js',
+        'leaflet-routing-machine':    '/node_modules/leaflet-routing-machine/dist'
     };  
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
@@ -29,7 +30,8 @@
         'platform-browser-dynamic',
         'router',
         'router-deprecated',
-        'upgrade'
+        'upgrade',
+        'leaflet-routing-machine'
     ];
     // Individual files (~300 requests):
     function packIndex(pkgName) {
