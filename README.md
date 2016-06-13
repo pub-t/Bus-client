@@ -5,5 +5,4 @@ Project client side
 * Install [nodejs] (https://nodejs.org/en/download/)
 * In project folder
   * npm-install
-  * tsd-install
   * npm start
