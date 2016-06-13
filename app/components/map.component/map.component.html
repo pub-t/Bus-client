@@ -1,2 +1,7 @@
-<button (click)="getMyLocation()">Get my location</button>
+<input-point></input-point>
 <div id="map"></div>
+<button (click)="getMyLocation()">Get my location</button>
+<div *ngIf="personLocation">
+    {{personLocation.latitude}}
+    {{personLocation.longitude}}
+</div>

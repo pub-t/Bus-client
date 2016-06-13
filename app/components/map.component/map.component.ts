@@ -6,6 +6,7 @@ import {Component} from '@angular/core';
 import {GeocodingService} from "../../services/geocoding.service";
 import {MapService} from "../../services/map.service";
 import {LocationModel} from "../../models/location.Model";
+import {InputPointComponent} from "../input-point.component/input-point.component";
 
 import {Map} from 'leaflet';
 
@@ -17,6 +18,9 @@ import {Map} from 'leaflet';
     providers: [
         MapService,
         GeocodingService
+    ],
+    directives: [
+        InputPointComponent
     ]
 })
 
@@ -39,14 +43,15 @@ export class MapComponent {
             layers: [this.mapService.baseMap.OpenStreetMap]
         });
 
-        L.control.zoom({position: 'topright'}).addTo(this.map);
+        L.control.zoom({position: 'topleft'}).addTo(this.map);
         L.control.scale().addTo(this.map);
-
+        
+        this.mapService.map = this.map;
     }
 
     getMyLocation() {
 
-        this.geoCodService.getPersonLocation(this.map)
+        this.mapService.getPersonLocation(this.map)
             .then(
                 location => this.personLocation = location,
                 error => console.log('Service error: ' + error)
