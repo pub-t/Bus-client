@@ -1,0 +1,10 @@
+<form #formCtrl="ngForm">
+    <input type="text" required [(ngModel)]="searchText">
+    {{searchText}}
+    <button type="submit" (click)="searchPoint()" [disabled]="!searchText">Найти</button>
+</form>
+<div *ngIf="searchResult">
+    {{searchResult}}
+</div>
+
+
