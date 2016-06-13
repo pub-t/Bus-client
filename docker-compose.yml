@@ -1,0 +1,7 @@
+pub-t-destination:
+  build: .
+  ports:
+    - "3000:3000"
+    - "3001:3001"
+  volumes:
+    - "./app:/opt/pub-t-destination/app"
