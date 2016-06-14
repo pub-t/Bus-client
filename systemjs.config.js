@@ -30,8 +30,7 @@
         'platform-browser-dynamic',
         'router',
         'router-deprecated',
-        'upgrade',
-        'leaflet-routing-machine'
+        'upgrade'
     ];
     // Individual files (~300 requests):
     function packIndex(pkgName) {

@@ -9,9 +9,6 @@ import {LatLngBounds} from 'leaflet';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
-import {Map} from 'leaflet';
-
-
 @Injectable()
 export class GeocodingService {
     http:Http;
@@ -66,41 +63,4 @@ export class GeocodingService {
             });
     }
 
-    getPersonLocation(map:Map) {
-
-        let personLocation = new LocationModel();
-
-        map.locate({setView: true, maxZoom: 15});
-
-        function onLocationFound(e) {
-
-            personLocation.latitude = e.latlng.lat;
-            personLocation.longitude = e.latlng.lng;
-
-            let radius = e.accuracy / 4;
-
-            L.circleMarker(e.latlng, {
-                radius: radius,
-                fillColor: "green",
-                color: "red",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-            })
-                .bindPopup('You are within ' + radius + ' meters from this point', {})
-                .addTo(map)
-                .openPopup();
-        }
-
-
-        map.on('locationfound', onLocationFound);
-
-        function onLocationError(e) {
-            alert(e.message);
-        }
-
-        map.on('locationerror', onLocationError);
-
-        return Promise.resolve(personLocation);
-    }
 }

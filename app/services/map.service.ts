@@ -2,20 +2,28 @@
  * Created by КРИВИЧАНИН on 10.06.2016.
  */
 import {Injectable} from '@angular/core';
+import {Map} from 'leaflet';
 
 @Injectable()
 export class MapService {
-    
-    baseMap:any;
 
-    constructor() {
-        this.baseMap = {
-            OpenStreetMap: new L.TileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
-                attribution: "Map data © <a href=http://openstreetmap.org>OpenStreetMap</a> contributors",
-                subdomains: ['otile1', 'otile2', 'otile3', 'otile4']
+    // getPersonLocation() {
+    //     return this.personLocation;
+    // }
+
+
+    addMarker(map:Map, latlng:any) {
+        let newMarker = L.marker(latlng, {
+            icon: L.icon({
+                iconUrl: '../../node_modules/leaflet/dist/images/marker-icon.png',
+                shadowUrl: '../../node_modules/leaflet/dist/images/marker-shadow.png'
             })
-        };
+        })
+            .bindPopup('marker')
+            .addTo(map)
+            .openPopup();
 
+        return newMarker;
     }
 }
 

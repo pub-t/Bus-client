@@ -1,0 +1,20 @@
+<!--[hidden]="fromFlag"-->
+<form>
+    <div *ngIf="fromFlag == false">
+    <input type="text"
+           [(ngModel)]="fromText"
+           placeholder="Откуда?">
+    </div>
+    {{fromFlag}}
+    <input type="text" required [(ngModel)]="toText" placeholder="Куда?">
+    {{toText}}
+    <div>
+        <button type="submit" (click)="searchPoint()" [disabled]="!(fromText || toText)">Поехали</button>
+    </div>
+</form>
+
+<div *ngIf="locations">
+    {{locations}}
+</div>
+
+
